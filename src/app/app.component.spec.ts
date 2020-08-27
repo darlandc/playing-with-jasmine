@@ -5,13 +5,10 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterTestingModule],
+      declarations: [AppComponent]
     }).compileComponents();
+    console.log(`beforeEach`);
   }));
 
   it('should create the app', () => {
@@ -26,10 +23,13 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('playing-with-jasmine');
   });
 
-  it('should render title', () => {
+  xit('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('playing-with-jasmine app is running!');
+    expect(0).toBeFalsy();
   });
+
+  afterAll(() => console.log('afterAll'));
+
 });

@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "playing-with-jasmine"
+    }
+  },
+  "defaultProject": "playing-with-jasmine",
+  "cli": {
+    "analytics": false
+  }
 }
