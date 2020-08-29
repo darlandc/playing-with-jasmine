@@ -6,7 +6,7 @@ import { pluck, share, shareReplay, tap, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private API = 'https://api.github.com/';
+  public API = 'https://api.github.com/';
 
   constructor(private http: HttpClient) {}
 
