@@ -1,4 +1,6 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { ReplaySubject } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  cache$: any;
+  repositories = [];
+
+  constructor(private service: AuthService) { }
 
   ngOnInit(): void {
+    this.cache$ = this.service.getProducts().subscribe((res) => {
+      this.repositories = res;
+    });
+
+  }
+
+  tap(){
+    this.cache$.subscribe((res) => {
+      this.repositories = res;
+    });
   }
 
 }

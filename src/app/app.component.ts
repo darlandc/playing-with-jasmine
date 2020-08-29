@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'playing-with-jasmine';
+
+  dummyFunction(message){
+      console.log(message);
+  }
 }
